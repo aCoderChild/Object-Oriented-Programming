@@ -1,0 +1,13 @@
+.menu-button {
+    -fx-background-color: #3498db; /* Màu nền cho MenuButton */
+    -fx-text-fill: white; /* Màu chữ cho MenuButton */
+}
+
+.menu-item {
+    -fx-background-color: #2980b9; /* Màu nền cho MenuItem */
+    -fx-text-fill: white; /* Màu chữ cho MenuItem */
+}
+
+.menu-item:hover {
+    -fx-background-color: #1abc9c; /* Màu nền khi hover */
+}

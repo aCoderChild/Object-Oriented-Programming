@@ -1,0 +1,19 @@
+
+.hbox {
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+.pagination-button {
+    -fx-background-color: #fde38e;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-border-radius: 10px;
+    -fx-cursor: hand;
+}
+
+.pagination-button:hover {
+    -fx-background-color: #ffc100; /* Màu nền khi hover */
+    -fx-text-fill: #ffffff; /* Màu chữ khi hover */
+}
+

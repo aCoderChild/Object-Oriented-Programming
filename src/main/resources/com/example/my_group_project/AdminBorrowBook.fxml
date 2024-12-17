@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.my_group_project.Controllers.Admin.AdminBorrowBookController">
+    <children>
+      <ImageView fitHeight="280.0" fitWidth="611.0" layoutX="193.0" layoutY="-88.0">
+         <image>
+            <Image url="@../../../picture/Train-rafiki.png" />
+         </image>
+      </ImageView>
+        <Pane layoutX="33.0" layoutY="83.0" prefHeight="476.0" prefWidth="40.0" style="-fx-background-color: #f7efd8; -fx-background-radius: 10;">
+            <children>
+                <Button fx:id="homeScene1Button" layoutX="2.0" layoutY="104.0" mnemonicParsing="false" onAction="#homeScene1ButtonOnAction" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                            <image>
+                                <Image url="@../../../picture/book.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="reportButton" layoutX="2.0" layoutY="310.0" mnemonicParsing="false" onAction="#reportButtonOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                            <image>
+                                <Image url="@../../../picture/question.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="logOutButton" layoutX="2.0" layoutY="431.0" mnemonicParsing="false" onAction="#logOutButtonOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                            <image>
+                                <Image url="@../../../picture/logout.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="userManagementButton" layoutX="1.0" layoutY="241.0" mnemonicParsing="false" onAction="#userManagementButtonOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                            <image>
+                                <Image url="@../../../picture/profile.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="bookBorrowButton" layoutX="2.0" layoutY="173.0" mnemonicParsing="false" onAction="#bookBorrowButtonOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                            <image>
+                                <Image url="@../../../picture/bookBorrow.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+            <effect>
+                <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" width="10.0" />
+            </effect>
+        </Pane>
+        <Label layoutX="29.0" layoutY="25.0" text="LMS">
+            <font>
+                <Font name="Impact" size="30.0" />
+            </font>
+        </Label>
+        <HBox layoutX="98.0" layoutY="81.0" prefHeight="34.0" prefWidth="897.0">
+            <children>
+                <TextField fx:id="searchTextField" prefHeight="32.0" prefWidth="860.0" promptText="search" style="-fx-background-color: Fde38e; -fx-background-radius: 20;" />
+                <ImageView fitHeight="33.0" fitWidth="35.0">
+                    <image>
+                        <Image url="@../../../picture/search.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </HBox>
+        <Button fx:id="backButton" layoutX="920.0" layoutY="30.0" mnemonicParsing="false" onAction="#backButtonOnAction" style="-fx-background-color: transparent;" stylesheets="@../../../buttonHover.css" underline="true">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <font>
+                <Font name="System Bold Italic" size="15.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="34.0" fitWidth="26.0">
+                    <image>
+                        <Image url="@../../../picture/back.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <ScrollPane fx:id="scrollPane" layoutX="97.0" layoutY="170.0" prefHeight="393.0" prefWidth="899.0" stylesheets="@../../../style.css">
+            <content>
+                <VBox fx:id="vBox" prefHeight="5000.0" prefWidth="887.0" style="-fx-background-color: FFFFFF;" />
+            </content>
+        </ScrollPane>
+        <HBox layoutX="97.0" layoutY="125.0" prefHeight="45.0" prefWidth="885.0" style="-fx-background-color: ffffff;">
+            <children>
+                <Pane prefHeight="45.0" prefWidth="110.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="27.0" layoutY="13.0" text="BOOK ID">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane prefHeight="45.0" prefWidth="185.0">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="14.0" text="NAME OF BOOK">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane prefHeight="45.0" prefWidth="100.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="23.0" layoutY="13.0" text="USER ID">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane prefHeight="45.0" prefWidth="160.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="30.0" layoutY="12.0" text="DATEBORROW">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane prefHeight="45.0" prefWidth="160.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="43.0" layoutY="12.0" text="DATEBACK">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane prefHeight="45.0" prefWidth="132.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="38.0" layoutY="13.0" text="STATUS">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </HBox>
+      <Label layoutX="398.0" layoutY="44.0" text="BOOK MANAGEMENT">
+         <font>
+            <Font name="Impact" size="30.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

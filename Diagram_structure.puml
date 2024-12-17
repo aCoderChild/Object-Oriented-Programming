@@ -1,0 +1,804 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.my_group_project.Controllers.BaseController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_165081078 { 
+   	label=my_group_project
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   AdminBookInformationController914674785[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AdminBookInformationController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   accessCountColumn: TableColumn&lt;BorrowInfo, Integer&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   author: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bookImage: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bookName: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   borrowCountColumn: TableColumn&lt;BorrowInfo, Integer&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   borrowTable: TableView&lt;BorrowInfo&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   category: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   content: TextArea [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currentBook: Book [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   publicYear: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   returnCountColumn: TableColumn&lt;BorrowInfo, Integer&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   searchTextField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   vBox2: VBox [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># deleteButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># displayBookBorrow(bookID: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- displayFilterSearch(filterBook: List&lt;BorrowedBook&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" ># editButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- filterSearch()</TD></TR>
+<TR><TD ALIGN="LEFT" ># getUserBorrowFromDatabase(bookID: String): List&lt;BorrowedBook&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ loadBookInformation(bookId: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ loadBorrowInformation(bookId: String)</TD></TR>
+<TR><TD ALIGN="LEFT" ># saveButtonOnAction(event: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+AdminHomeScene914674785[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AdminHomeScene</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   borrowCountText: Text [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   numberOfBookText: Text [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   searchTextField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   vBox: VBox [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># addButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- displayBook()</TD></TR>
+<TR><TD ALIGN="LEFT" >- displayFilterSearch(filterBook: List&lt;Book&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >- filterSearch()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" >- showBook(bookID: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+AdminLoginController914674785[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AdminLoginController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   passwordTextField: TextField [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># adminLogInButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># clickEnter(event: KeyEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+AdminMenuController914674785[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AdminMenuController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># bookBorrowButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># homeScene1ButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># logOutButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># reportButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># userManagementButtonOnAction(event: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+BaseController1314468704[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BaseController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ backButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ changeScene(fxml: String, title: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ showAlert(title: String, message: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ showAlert1(title: String, message: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ showIntro(message: String, stage: Stage)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Book1707684160[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Book</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   author: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   borrowCount: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   description: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   genre: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   imageURL: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   time: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   title: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   viewCount: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   yearPublic: int [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+BookAPI1219838828[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BookAPI</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- extractBooks(volumes: Volumes): List&lt;Book&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getRecommendedBooks(genre: String): List&lt;Book&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ searchBooks(query: String): List&lt;Book&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+BookInDatabase469376558[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BookInDatabase</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ deleteBook(book: Book, message: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ deleteBookFromDatabase(book: Book)</TD></TR>
+<TR><TD ALIGN="LEFT" >- fetchRecentBooks(): List&lt;Book&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getBookById(bookID: String): Book</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getBorrowedBooks(User_ID: String): List&lt;Book&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getRecentBooks(User_ID: String): List&lt;Book&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ insertBook(book: Book)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ isBookInDatabase(book: Book): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ returnBookMostView(message: String): List&lt;Book&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ returnBookfromAPI(): List&lt;Book&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ saveBookToDatabase(book: Book)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ saveRecentBooks(book: RecentBook)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ savedBooks(book: Book, user: User)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateBook(book: Book)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateViewCount(bookID: String, message: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+BookRecommendation1219838828[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BookRecommendation</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- createTfIdfVector(text: String): Map&lt;CharSequence, Integer&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ recommendBooks(query: String, books: List&lt;Book&gt;): List&lt;Book&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+BorrowInfo1707684160[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BorrowInfo</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   accessCount: IntegerProperty [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   borrowCount: IntegerProperty [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   returnCount: IntegerProperty [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ accessCountProperty(): IntegerProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ borrowCountProperty(): IntegerProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ returnCountProperty(): IntegerProperty</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+HelloApplication2069587927[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HelloApplication</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- createConfirmationAlert(): Alert</TD></TR>
+<TR><TD ALIGN="LEFT" >- handleWindowCloseRequest(event: WindowEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- initializeMainStage(stage: Stage)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+<TR><TD ALIGN="LEFT" >+ saveRecentBooksToDatabase()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ start(stage: Stage)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LoginDetail469376558[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LoginDetail</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   password: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   username: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PaginaTion1314468704[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PaginaTion</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   currentPage: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ backButton(): int</TD></TR>
+<TR><TD ALIGN="LEFT" >- displayHistory(clickedBooks: List&lt;Book&gt;): Node</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pagination(recentBooks: List&lt;Book&gt;, paginationHistory: Pagination)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ showBookProfile(book: Book, pane: Pane)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+RecentBook1707684160[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)RecentBook</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   recentBooks: Queue&lt;Book&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addBook(book: Book)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ changeBooksToDate()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ fetchRecentBooks(): List&lt;Book&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+SearchCache1219838828[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SearchCache</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   cache: Map&lt;String, List&lt;Book&gt;&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ clear()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ contains(query: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ get(query: String): List&lt;Book&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ put(query: String, books: List&lt;Book&gt;)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TestInformation469376558[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TestInformation</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ checkEmail(email: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >- checkInformation(infor: String, message: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkPhone(phoneNumber: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkUserName(userName: String): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+User1707114590[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)User</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   dateOfBirth: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   email: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fullName: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   gender: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   password: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   phone: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   recentBook: RecentBook [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   username: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserBookProfileController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserBookProfileController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   bookImageView: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bookTableVbox: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   content: Text [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currentBook: Book [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currentUser: User [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   highlightImage: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nameOfAuthor: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nameOfBook: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   numberOfBorrow: Text [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   pageViews: Text [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addBookHistory(book: Book)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ backButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># borrowButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># clickToSaveBook(event: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- displayRecommendedBooks(books: List&lt;Book&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >- fetchAndDisplayBookMetrics(bookId: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ get()</TD></TR>
+<TR><TD ALIGN="LEFT" ># highlightBook()</TD></TR>
+<TR><TD ALIGN="LEFT" ># initialize()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserBookSearch1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserBookSearch</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   bookRecommendation: BookRecommendation [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   resultsVBox: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   searchButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   searchCache: SearchCache [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   searchTextField: TextField [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- displaySearchResults(books: List&lt;Book&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >- searchBooks()</TD></TR>
+<TR><TD ALIGN="LEFT" ># searchButtonAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># searchTextFieldOnAction(event: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserConfirmPasswordController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserConfirmPasswordController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   ConfirmPassField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   differPassword: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   passTextField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   rightPassword: Label [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># addPassToData(password: String)</TD></TR>
+<TR><TD ALIGN="LEFT" ># backButtonAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># clickEnter(event: KeyEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># clickEnter1(event: KeyEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># fillIn(): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" ># nextButtonAction(event: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserForgetPasswordController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserForgetPasswordController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   nameTextField: TextField [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- checkInformation(infor: String, message: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" ># clickEnter(event: KeyEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getUserID(connectDB: Connection, username: String)</TD></TR>
+<TR><TD ALIGN="LEFT" ># nextButtonOnAction(event: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserHighLightController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserHighLightController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   currentUser: User [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   paginaTion: PaginaTion [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   paginationHighLight: Pagination [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ backButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># initialize()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserHistoryController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserHistoryController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   currentUserId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   paginaTion: PaginaTion [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   paginationHistory: Pagination [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ backButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" ># pagination(borrowedBooks: List&lt;Book&gt;)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserHomeController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserHomeController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   authorBook: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bookTableVbox: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   booksHere: HBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   descriptionHere: Text [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   hBoxBooks: HBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   imageBooks: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nameOfPopular: Label [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ bookProfile(pane: Pane, book: Book)</TD></TR>
+<TR><TD ALIGN="LEFT" ># getPopularBook()</TD></TR>
+<TR><TD ALIGN="LEFT" ># initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" ># recentBooks(books: List&lt;Book&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ showIntro(message: String, stage: Stage)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserLoginController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserLoginController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   enterPasswordField: PasswordField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   forgetButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   loginButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   loginMessageLabel: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   rectangle: Rectangle [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   rememberMeCheckBox: CheckBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   signupButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userID: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   usernameComboBox: ComboBox&lt;LoginDetail&gt; [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># adminButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ backButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># checkLoginButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># clickEnter(event: KeyEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># clickEnter1(event: KeyEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># forgetButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getUserId(connectDB: Connection, username: String, password: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" >- initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" >- loadLoginDetails()</TD></TR>
+<TR><TD ALIGN="LEFT" ># loginButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- rememberMeCheckBoxOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- saveLoginDetails(username: String, password: String)</TD></TR>
+<TR><TD ALIGN="LEFT" ># signupButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ toHomeScene()</TD></TR>
+<TR><TD ALIGN="LEFT" ># userButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ validateLogin(username: String, password: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserMenuController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserMenuController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ categoryOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ gameOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ homeOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># logOutOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ moreInforOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ profileOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ searchOnAction(event: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserMoreInformationController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserMoreInformationController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   contentTextField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isEditable: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   searchTextField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   titleTextField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   vBox: VBox [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- addReportNow(report: Report)</TD></TR>
+<TR><TD ALIGN="LEFT" >- clearTextField()</TD></TR>
+<TR><TD ALIGN="LEFT" >- displayFilterSearch(filterReport: List&lt;Report&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" ># displayReport(userId: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- editButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- filterSearch(userId: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- getReportFromDatabase(userId: String): List&lt;Report&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" >- saveButtonOnAction(event: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserProfileUserController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserProfileUserController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># highlightButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># historyButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># profileFormButtonOnAction(event: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserProfileUserFormController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserProfileUserFormController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   dateOfBirthPicker: DatePicker [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   emailField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fullnameField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   genderBox: ComboBox&lt;String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   imageProfile: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isEdited: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   phoneNumberField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   saveButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   selectedImageFile: File [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   uploadButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userID: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   usernameField: TextField [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" >- loadUserProfile(userID: String)</TD></TR>
+<TR><TD ALIGN="LEFT" ># onEdit()</TD></TR>
+<TR><TD ALIGN="LEFT" ># onSave()</TD></TR>
+<TR><TD ALIGN="LEFT" ># onUploadPicture()</TD></TR>
+<TR><TD ALIGN="LEFT" ># updateUserProfile(userId: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserRegisterController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserRegisterController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   backButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   checkEmail: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   checkPhone: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   loginButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   passwordLabel: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   registerButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   registrationMessageLabel: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   setEmailTextField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   setPasswordTextField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   setPhoneTextField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userNameLabel: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   usernameTextField: TextField [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ backButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkEmail(email: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkPhoneNumber(phone: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkUserName(userName: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkUserPassword(password: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" ># clickEnter(event: KeyEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># loginButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># registerButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ registerUser()</TD></TR>
+<TR><TD ALIGN="LEFT" >- showAlert(title: String, message: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ toLogInScene()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserSendEmailController1770999687[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserSendEmailController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   OTPcode: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   otpcode: TextField [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- clickEnter(event: KeyEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- generateOTP(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" >- nextButtonOnAction(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- sendOTP(emailUser: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- verifyOTP(number: String, OTP: String): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+AdminBookInformationController914674785 -> Book1707684160[label="currentBook
+[0..1]"];
+AdminBookInformationController914674785 -> BorrowInfo1707684160[label="accessCountColumn
+[0..1]"];
+AdminBookInformationController914674785 -> BorrowInfo1707684160[label="borrowCountColumn
+[0..1]"];
+AdminBookInformationController914674785 -> BorrowInfo1707684160[label="borrowTable
+[0..1]"];
+AdminBookInformationController914674785 -> BorrowInfo1707684160[label="returnCountColumn
+[0..1]"];
+AdminHomeScene914674785 -> AdminBookInformationController914674785[arrowhead=none, arrowtail=empty, dir=both];
+AdminMenuController914674785 -> AdminHomeScene914674785[arrowhead=none, arrowtail=empty, dir=both];
+BaseController1314468704 -> AdminLoginController914674785[arrowhead=none, arrowtail=empty, dir=both];
+BaseController1314468704 -> AdminMenuController914674785[arrowhead=none, arrowtail=empty, dir=both];
+BaseController1314468704 -> UserBookProfileController1770999687[label="backButtonOnAction() -> backButtonOnAction()"];
+BaseController1314468704 -> UserBookSearch1770999687[arrowhead=none, arrowtail=empty, dir=both];
+BaseController1314468704 -> UserConfirmPasswordController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+BaseController1314468704 -> UserForgetPasswordController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+BaseController1314468704 -> UserHighLightController1770999687[label="backButtonOnAction() -> backButtonOnAction()"];
+BaseController1314468704 -> UserHistoryController1770999687[label="backButtonOnAction() -> backButtonOnAction()"];
+BaseController1314468704 -> UserHomeController1770999687[label="showIntro() -> showIntro()"];
+BaseController1314468704 -> UserLoginController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+BaseController1314468704 -> UserMenuController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+BaseController1314468704 -> UserSendEmailController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+HelloApplication2069587927 -> RecentBook1707684160[label="saveRecentBooksToDatabase() -> changeBooksToDate()"];
+SearchCache1219838828 -> Book1707684160[label="cache
+[0..*]"];
+UserBookProfileController1770999687 -> Book1707684160[label="currentBook
+[0..1]"];
+UserBookProfileController1770999687 -> RecentBook1707684160[label="initialize() -> addBook()"];
+UserBookProfileController1770999687 -> User1707114590[label="currentUser
+[0..1]"];
+UserBookSearch1770999687 -> BookAPI1219838828[label="searchBooks() -> searchBooks()"];
+UserBookSearch1770999687 -> BookInDatabase469376558[label="displaySearchResults() -> insertBook()"];
+UserBookSearch1770999687 -> BookRecommendation1219838828[label="bookRecommendation
+[0..1]"];
+UserBookSearch1770999687 -> SearchCache1219838828[label="searchCache
+[0..1]"];
+UserBookSearch1770999687 -> UserHomeController1770999687[label="displaySearchResults() -> bookProfile()"];
+UserHighLightController1770999687 -> BaseController1314468704[label="backButtonOnAction() -> backButtonOnAction()"];
+UserHighLightController1770999687 -> PaginaTion1314468704[label="paginaTion
+[0..1]"];
+UserHighLightController1770999687 -> User1707114590[label="currentUser
+[0..1]"];
+UserHistoryController1770999687 -> BaseController1314468704[label="backButtonOnAction() -> backButtonOnAction()"];
+UserHistoryController1770999687 -> PaginaTion1314468704[label="paginaTion
+[0..1]"];
+UserHomeController1770999687 -> BaseController1314468704[label="bookProfile() -> changeScene()"];
+UserLoginController1770999687 -> LoginDetail469376558[label="usernameComboBox
+[0..1]"];
+UserMenuController1770999687 -> HelloApplication2069587927[label="logOutOnAction() -> saveRecentBooksToDatabase()"];
+UserMenuController1770999687 -> UserBookProfileController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+UserMenuController1770999687 -> UserHighLightController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+UserMenuController1770999687 -> UserHistoryController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+UserMenuController1770999687 -> UserHomeController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+UserMenuController1770999687 -> UserMoreInformationController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+UserMenuController1770999687 -> UserProfileUserController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+UserMenuController1770999687 -> UserProfileUserFormController1770999687[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

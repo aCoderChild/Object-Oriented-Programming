@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1024.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.my_group_project.Controllers.User.UserProfileUserFormController">
+   <children>
+      <Pane prefHeight="161.0" prefWidth="1024.0" style="-fx-background-color: #f7efd8;">
+         <children>
+            <ImageView fitHeight="161.0" fitWidth="1024.0" opacity="0.24">
+               <image>
+                  <Image url="@../../../picture/background.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="backButton" layoutX="960.0" layoutY="17.0" mnemonicParsing="false" onAction="#backButtonOnAction" style="-fx-background-color: 000000;" underline="true">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="26.0">
+                     <image>
+                        <Image url="@../../../picture/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <BorderPane layoutX="875.0" layoutY="18.0" prefHeight="155.0" prefWidth="99.0">
+               <top>
+                  <MenuButton mnemonicParsing="false" prefHeight="38.0" prefWidth="48.0" style="-fx-background-color: 000000;" BorderPane.alignment="CENTER">
+                     <items>
+                        <MenuItem fx:id="searchMenuItem" mnemonicParsing="false" onAction="#searchOnAction" text="Search" />
+                        <MenuItem fx:id="homeMenuItem" mnemonicParsing="false" onAction="#homeOnAction" text="Home" />
+                        <MenuItem fx:id="moreInforMenuItem" mnemonicParsing="false" onAction="#moreInforOnAction" text="More Information" />
+                        <MenuItem fx:id="logOutMenuItem" mnemonicParsing="false" onAction="#logOutOnAction" text="Log Out" />
+                     </items>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@../../../picture/menu.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuButton>
+               </top>
+            </BorderPane>
+            <Label layoutX="15.0" layoutY="15.0" text="LMS">
+               <font>
+                  <Font name="Impact" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="411.0" layoutY="87.0" text="PROFILE" textAlignment="CENTER">
+               <font>
+                  <Font name="Impact" size="60.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Label fx:id="name" layoutX="207.0" layoutY="468.0" text="USER NAME" textAlignment="CENTER">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="uploadButton" layoutX="165.0" layoutY="493.0" mnemonicParsing="false" onAction="#onUploadPicture" prefHeight="28.0" prefWidth="145.0" style="-fx-background-radius: 20;" stylesheets="@../../../buttonHover.css" text="UPLOAD THE PICTURE">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="fullnameField" layoutX="397.0" layoutY="272.0" prefHeight="25.0" prefWidth="230.0" promptText="Type your full name" style="-fx-background-color: #f7efd8; -fx-background-radius: 20;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="usernameField" layoutX="656.0" layoutY="272.0" prefHeight="25.0" prefWidth="230.0" promptText="Type you user name" style="-fx-background-color: #f7efd8; -fx-background-radius: 20;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="phoneNumberField" layoutX="397.0" layoutY="338.0" prefHeight="25.0" prefWidth="230.0" promptText="Type your phone number" style="-fx-background-color: #f7efd8; -fx-background-radius: 20;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Label layoutX="399.0" layoutY="249.0" text="Full Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="663.0" layoutY="249.0" text="User Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="399.0" layoutY="314.0" text="Phone Number">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emailField" layoutX="394.0" layoutY="403.0" prefHeight="25.0" prefWidth="230.0" promptText="Type your email" style="-fx-background-color: #f7efd8; -fx-background-radius: 20;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Label layoutX="397.0" layoutY="379.0" text="Email">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateOfBirthPicker" layoutX="664.0" layoutY="340.0" promptText="Date of birth" />
+      <Label layoutX="663.0" layoutY="314.0" text="Date of birth">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="genderBox" layoutX="664.0" layoutY="406.0" prefWidth="150.0" style="-fx-background-color: #f7efd8; -fx-background-radius: 20;" />
+      <Label layoutX="666.0" layoutY="379.0" text="Gender">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="editButton" layoutX="398.0" layoutY="461.0" mnemonicParsing="false" onAction="#onEdit" prefHeight="28.0" prefWidth="493.0" style="-fx-background-radius: 20;" stylesheets="@../../../buttonHover.css" text="EDIT">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="saveButton" layoutX="398.0" layoutY="493.0" mnemonicParsing="false" onAction="#onSave" prefHeight="28.0" prefWidth="493.0" style="-fx-background-radius: 20;" stylesheets="@../../../buttonHover.css" text="SAVE">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imageProfile" fitHeight="211.0" fitWidth="164.0" layoutX="158.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

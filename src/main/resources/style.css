@@ -1,0 +1,64 @@
+.button {
+    -fx-graphic-text-gap: 10px;
+    -fx-content-display: RIGHT;
+    -fx-border-color: #000000; /* Màu viền */
+    -fx-border-width: 1px; /* Độ dày viền */
+    -fx-border-radius: 20px; /* Bán kính viền (để bo góc) */
+    -fx-background-color: transparent; /* Màu nền trong suốt */
+    -fx-padding: 0; /* Đảm bảo không có đệm thêm */
+
+}
+
+.button:hover {
+    -fx-background-color: #ffc100;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+}
+
+.scroll-pane {
+    -fx-background-color: #ffffff; /* Nền trong suốt */
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent; /* Nền thanh cuộn */
+    -fx-pref-width: 10; /* Độ rộng thanh cuộn */
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent; /* Nền thanh cuộn */
+    -fx-pref-height: 10; /* Chiều cao thanh cuộn */
+}
+
+.scroll-pane .thumb:vertical {
+    -fx-background-color: #ffffff; /* Màu thanh cuộn */
+    -fx-background-radius: 20; /* Làm tròn các góc */
+}
+
+.scroll-pane .thumb:horizontal {
+    -fx-background-color:#ffffff; /* Màu thanh cuộn */
+    -fx-background-radius: 20; /* Làm tròn các góc */
+}
+
+.rounded-image {
+    -fx-background-radius: 100%; /* bo tròn */
+    -fx-clip: shape; /* clip nếu cần */
+}
+
+.text-limited {
+    -fx-pref-height: 10; /* Chiều cao tối đa cho 2 dòng */
+    -fx-text-overrun: ellipsis;
+    -fx-wrap-text: true;
+}
+
+.hbox:hover {
+    -fx-background-color: #ffc100; /* Change to a light gray background on hover */
+    -fx-scale-x: 1.1;  /* Slightly enlarge the HBox in the X direction */
+    -fx-scale-y: 1.1;  /* Slightly enlarge the HBox in the Y direction */
+    -fx-cursor: hand;  /* Change the cursor to indicate clickability */
+}
+
+
+
+

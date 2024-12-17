@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="282.0" prefWidth="181.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="5.0" layoutY="7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="170.0" style="-fx-background-color: #fde38e; -fx-background-radius: 20;">
+         <padding>
+            <Insets bottom="15.0" left="5.0" right="15.0" top="5.0" />
+         </padding>
+         <children>
+            <Label fx:id="setContentBook" alignment="TOP_LEFT" layoutX="3.0" layoutY="218.0" prefHeight="46.0" prefWidth="164.0" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="setImageBook" fitHeight="185.0" fitWidth="135.0" layoutX="19.0" layoutY="8.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <Label fx:id="setPageView" alignment="CENTER" contentDisplay="CENTER" layoutX="17.0" layoutY="195.0" prefHeight="17.0" prefWidth="141.0" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="1.0" green="0.7568627595901489" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Pane>
+   </children>
+</Pane>
