@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1024.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.my_group_project.Controllers.User.UserHighLightController">
+   <children>
+      <Pane prefHeight="161.0" prefWidth="1024.0" style="-fx-background-color: #f7efd8;">
+         <children>
+            <ImageView fitHeight="161.0" fitWidth="1024.0" opacity="0.24">
+               <image>
+                  <Image url="@../../../picture/background.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="backButton" layoutX="960.0" layoutY="17.0" mnemonicParsing="false" onAction="#backButtonOnAction" style="-fx-background-color: transparent;" stylesheets="@../../../buttonHover.css" underline="true">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="26.0">
+                     <image>
+                        <Image url="@../../../picture/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <BorderPane layoutX="875.0" layoutY="18.0" prefHeight="155.0" prefWidth="99.0">
+               <top>
+                  <MenuButton mnemonicParsing="false" prefHeight="38.0" prefWidth="48.0" style="-fx-background-color: 000000;" BorderPane.alignment="CENTER">
+                     <items>
+                        <MenuItem fx:id="searchMenuItem" mnemonicParsing="false" onAction="#searchOnAction" text="Search" />
+                        <MenuItem fx:id="homeMenuItem" mnemonicParsing="false" onAction="#homeOnAction" text="Home" />
+                        <MenuItem fx:id="moreInforMenuItem" mnemonicParsing="false" onAction="#moreInforOnAction" text="MoreInformaition" />
+                        <MenuItem fx:id="logOutMenuItem" mnemonicParsing="false" onAction="#logOutOnAction" text="LogOut" />
+                     </items>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@../../../picture/menu.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuButton>
+               </top>
+            </BorderPane>
+            <Label layoutX="15.0" layoutY="15.0" text="LMS">
+               <font>
+                  <Font name="Impact" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="386.0" layoutY="88.0" text="HIGHLIGHT" textAlignment="CENTER">
+               <font>
+                  <Font name="Impact" size="60.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pagination fx:id="paginationHighLight" layoutX="57.0" layoutY="187.0" prefHeight="449.0" prefWidth="914.0" style="-fx-background-color: transparent;" stylesheets="@../../../pagination.css" />
+      <ImageView fitHeight="200.0" fitWidth="100.0" layoutX="917.0" layoutY="277.0">
+         <image>
+            <Image url="@../../../picture/person_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="110.0" layoutX="-20.0" layoutY="398.0">
+         <image>
+            <Image url="@../../../picture/person_2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1024.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.my_group_project.Controllers.User.UserProfileUserController">
+   <children>
+      <Pane prefHeight="161.0" prefWidth="1024.0" style="-fx-background-color: #f7efd8;">
+         <children>
+            <ImageView fitHeight="161.0" fitWidth="1024.0" opacity="0.24">
+               <image>
+                  <Image url="@../../../picture/background.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="backButton" layoutX="960.0" layoutY="17.0" mnemonicParsing="false" onAction="#backButtonOnAction" style="-fx-background-color: 000000;" underline="true">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="26.0">
+                     <image>
+                        <Image url="@../../../picture/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <BorderPane layoutX="875.0" layoutY="18.0" prefHeight="155.0" prefWidth="99.0">
+               <top>
+                  <MenuButton mnemonicParsing="false" prefHeight="38.0" prefWidth="48.0" style="-fx-background-color: 000000;" BorderPane.alignment="CENTER">
+                     <items>
+                        <MenuItem fx:id="searchMenuItem" mnemonicParsing="false" onAction="#searchOnAction" text="Search" />
+                        <MenuItem fx:id="homeMenuItem" mnemonicParsing="false" onAction="#homeOnAction" text="Home" />
+                        <MenuItem fx:id="moreInforMenuItem" mnemonicParsing="false" onAction="#moreInforOnAction" text="MoreInformaition" />
+                        <MenuItem fx:id="logOutMenuItem" mnemonicParsing="false" onAction="#logOutOnAction" text="LogOut" />
+                     </items>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@../../../picture/menu.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuButton>
+               </top>
+            </BorderPane>
+            <Label layoutX="15.0" layoutY="15.0" text="LMS">
+               <font>
+                  <Font name="Impact" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="420.0" layoutY="87.0" text="PROFILE" textAlignment="CENTER">
+               <font>
+                  <Font name="Impact" size="60.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Button fx:id="historyButton" layoutX="232.0" layoutY="472.0" mnemonicParsing="false" onAction="#historyButtonOnAction" prefHeight="25.0" prefWidth="593.0" style="-fx-background-radius: 20;" stylesheets="@../../../buttonHover.css" text="HISTORY" textAlignment="CENTER">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="highLightButton" layoutX="232.0" layoutY="509.0" mnemonicParsing="false" onAction="#highlightButtonOnAction" prefHeight="25.0" prefWidth="593.0" style="-fx-background-radius: 20;" stylesheets="@../../../buttonHover.css" text="HIGHLIGHT" textAlignment="CENTER">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="profileFormButton" layoutX="233.0" layoutY="434.0" mnemonicParsing="false" onAction="#profileFormButtonOnAction" prefHeight="28.0" prefWidth="593.0" style="-fx-background-radius: 20;" stylesheets="@../../../buttonHover.css" text="PROFILE">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font></Button>
+      <ImageView fitHeight="263.0" fitWidth="230.0" layoutX="399.0" layoutY="161.0">
+         <image>
+            <Image url="@../../../picture/Account-cuate.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+
+.content {
+    -fx-font-size: 20px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+
+}
+
+.dialog-pane .label {
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-color: #ffc100;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 10px;
+}
+
+.button:hover {
+    -fx-background-color: #ffc100;
+    -fx-cursor: hand;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}

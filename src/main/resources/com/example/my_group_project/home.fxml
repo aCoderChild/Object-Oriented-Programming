@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.my_group_project.Controllers.User.UserHomeController">
+    <children>
+        <Pane layoutX="664.0" prefHeight="600.0" prefWidth="360.0" style="-fx-background-color: #f7efd8;">
+            <children>
+                <Text layoutX="18.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RECENT">
+                    <font>
+                        <Font name="System Bold" size="50.0" />
+                    </font>
+                </Text>
+                <ScrollPane layoutX="13.0" layoutY="126.0" prefHeight="457.0" prefWidth="335.0" style="-fx-background-color: #f7efd8;" stylesheets="@../../../style.css">
+                    <content>
+                        <VBox fx:id="bookTableVbox" prefHeight="563.0" prefWidth="323.0" style="-fx-background-color: #f7efd8;" />
+                    </content>
+                </ScrollPane>
+                <ImageView fitHeight="142.0" fitWidth="149.0" layoutX="166.0" layoutY="-2.0">
+                    <image>
+                        <Image url="@../../../picture/Exciting_news_amico.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane prefHeight="600.0" prefWidth="664.0" style="-fx-background-color: ffffff;" styleClass="style.css">
+            <children>
+                <ScrollPane hbarPolicy="NEVER" layoutX="100.0" layoutY="317.0" prefHeight="283.0" prefWidth="535.0" stylesheets="@../../../style.css" vbarPolicy="NEVER">
+                    <content>
+                        <VBox prefHeight="715.0" prefWidth="537.0" spacing="10.0" style="-fx-background-color: ffffff;">
+                            <children>
+                                <Pane prefHeight="39.0" prefWidth="537.0" style="-fx-background-color: transparent;">
+                                    <children>
+                                        <Label layoutX="18.0" layoutY="2.0" text="POPULAR" underline="true">
+                                            <font>
+                                                <Font name="System Bold" size="30.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <ScrollPane hbarPolicy="NEVER" prefHeight="279.0" prefWidth="537.0" style="-fx-background-color: transparent;" stylesheets="@../../../style.css" vbarPolicy="NEVER">
+                                    <content>
+                                        <HBox fx:id="booksHere" spacing="10.0" style="-fx-background-color: ffffff;" />
+                                    </content>
+                                </ScrollPane>
+                                <Pane prefHeight="43.0" prefWidth="537.0" style="-fx-background-color: transparent;">
+                                    <children>
+                                        <Label layoutX="18.0" text="LATEST" underline="true">
+                                            <font>
+                                                <Font name="System Bold" size="30.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <ScrollPane prefHeight="310.0" prefWidth="540.0" style="-fx-background-color: transparent;" stylesheets="@../../../style.css">
+                                    <content>
+                                        <HBox fx:id="hBoxBooks" style="-fx-background-color: ffffff;" />
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+                <Pane layoutX="23.0" layoutY="73.0" prefHeight="476.0" prefWidth="40.0" style="-fx-background-color: #f7efd8; -fx-background-radius: 10;">
+                    <children>
+                        <Button fx:id="homeButton" layoutX="2.0" layoutY="203.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0">
+                                    <image>
+                                        <Image url="@../../../picture/home.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="moreInforButton" layoutX="2.0" layoutY="319.0" mnemonicParsing="false" onAction="#moreInforOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0">
+                                    <image>
+                                        <Image url="@../../../picture/question.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="logOutButton" layoutX="2.0" layoutY="431.0" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0">
+                                    <image>
+                                        <Image url="@../../../picture/logout.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="profileButton" layoutX="2.0" layoutY="263.0" mnemonicParsing="false" onAction="#profileOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0">
+                                    <image>
+                                        <Image url="@../../../picture/profile.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="searchButton" layoutX="2.0" layoutY="145.0" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0">
+                                    <image>
+                                        <Image url="@../../../picture/search.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                  <Button fx:id="gameButton" layoutX="3.0" layoutY="86.0" mnemonicParsing="false" onAction="#gameButtonOnAction" style="-fx-background-radius: 30;" stylesheets="@../../../buttonHoverDashboard.css">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@../../../picture/gamepad.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                    </children>
+                    <effect>
+                        <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" width="10.0" />
+                    </effect>
+                </Pane>
+                <Text layoutX="298.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Content:">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Text>
+                <Text layoutX="298.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author:">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Text>
+                <ImageView fx:id="imageBooks" fitHeight="212.0" fitWidth="163.0" layoutX="104.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
+                <Label fx:id="nameOfPopular" layoutX="295.0" layoutY="62.0" prefHeight="73.0" prefWidth="352.0" text="NAME OF BOOK">
+                    <font>
+                        <Font name="System Bold" size="50.0" />
+                    </font></Label>
+                <Label fx:id="authorBook" layoutX="354.0" layoutY="128.0" prefHeight="17.0" prefWidth="298.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <ScrollPane layoutX="298.0" layoutY="175.0" prefHeight="91.0" prefWidth="335.0" stylesheets="@../../../style.css">
+                    <content>
+                        <VBox prefHeight="444.0" prefWidth="323.0" style="-fx-background-color: ffffff;">
+                            <children>
+                                <Text fx:id="descriptionHere" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.13671875">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+                <ImageView fitHeight="65.0" fitWidth="64.0" layoutX="228.0" layoutY="41.0">
+                    <image>
+                        <Image url="@../../../picture/badge.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="162.0" fitWidth="163.0" layoutX="150.0" layoutY="161.0">
+                    <image>
+                        <Image url="@../../../picture/Booklover_cuate.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Label layoutX="19.0" layoutY="15.0" text="LMS">
+            <font>
+                <Font name="Impact" size="30.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
